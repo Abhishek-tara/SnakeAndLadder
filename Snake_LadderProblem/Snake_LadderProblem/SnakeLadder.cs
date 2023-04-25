@@ -37,9 +37,10 @@ namespace Snake_LadderProblem
             //}
             //Console.WriteLine("Current Position is at : {0}", position);
 
-            //UC-4
-            while (position != 100)
+            //UC-5
+            while (position < 100)
             {
+                int temp = position;
                 int dice = random.Next(1, 7);
                 Console.WriteLine($"The Player rolls a dice and gets: {dice}");
 
@@ -58,9 +59,14 @@ namespace Snake_LadderProblem
                     Console.WriteLine("Player Moves Behind by {0} from Snake", dice);
                     position -= dice;
                 }
+
                 if (position < 0)
                 {
                     position = 0;
+                }
+                else if (position > 100)
+                {
+                    position = temp;
                 }
                 Console.WriteLine("Player Current Position is at : {0}", position);
             }
