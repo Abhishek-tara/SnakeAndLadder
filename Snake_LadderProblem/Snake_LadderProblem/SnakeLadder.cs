@@ -12,6 +12,7 @@ namespace Snake_LadderProblem
         {
             int position = 0;
             Random random = new Random();
+            int numberOfTimesDiceRolled = 0;
             //Console.WriteLine("Welcome Player 1, Let's start the Game");
             //Console.WriteLine("Player 1 is at position : " + position);
 
@@ -37,12 +38,15 @@ namespace Snake_LadderProblem
             //}
             //Console.WriteLine("Current Position is at : {0}", position);
 
-            //UC-5
+            //UC-6
             while (position < 100)
             {
                 int temp = position;
                 int dice = random.Next(1, 7);
+                numberOfTimesDiceRolled++;
+
                 Console.WriteLine($"The Player rolls a dice and gets: {dice}");
+                Console.WriteLine($"Number of Times Dice rolled is: {numberOfTimesDiceRolled}");
 
                 int option = random.Next(0, 3);
                 if (option == 0)
@@ -71,6 +75,7 @@ namespace Snake_LadderProblem
                 Console.WriteLine("Player Current Position is at : {0}", position);
             }
             Console.WriteLine("Player is at Position : {0}", position);
+            Console.WriteLine($"Total Number of Times Dice rolled is: {numberOfTimesDiceRolled}");
         }
     }
 }
